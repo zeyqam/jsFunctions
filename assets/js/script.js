@@ -51,3 +51,82 @@
 //   }
 // }
 // login("cavid@code.edu.az", "12345");
+
+//5) Functiona ededlerden ibaret array gelir, function hemin arraydaki tek ededlerin cemini qaytarmalidir.
+// function sumOfOddNumbers(arr) {
+//   if (!Array.isArray(arr)) {
+//     return "Parametr array qebul etmelidir";
+//   }
+//   let sum = 0;
+//   for (let i = 0; i < arr.length; i++) {
+//     if (typeof (arr[i] === "number") && arr[i] % 2 !== 0) {
+//       sum += arr[i];
+//     }
+//   }
+//   return sum;
+// }
+// console.log(sumOfOddNumbers([1, 2, 3, 4, 5]));
+//6) Functiona ededlerden ibaret array gelir, function hemin arraydaki cut ededlerin sayini qaytarmalidir.
+
+// function countOfEvenNumbers(arr) {
+//   if (!Array.isArray(arr) === "number") {
+//     return "Parametr array qebul etmelidir";
+//   }
+//   let count = 0;
+//   for (let i = 0; i < arr.length; i++) {
+//     if (typeof (arr[i] === "number") && arr[i] % 2 === 0) {
+//       count++;
+//     }
+//   }
+//   return count;
+// }
+// console.log(countOfEvenNumbers([1, 2, 3, 4, 5]));
+//8) Icerisinde name, surname, age, email olan bir nece student objectleriniz var.
+//Ashagida elave etdiklerimi functionlar sekilinde yazin,
+//functionlar objectlerden ibaret array qebul edecek.
+// 1) Yashi 18-25 araliginda olan telebelerin sayi.
+// 2) Emailinde "c" herfi olan studentlerin sayi.
+// function countStudentsInAgeRange(students, minAge, maxAge) {
+//   return students.filter(
+//     (student) => student.age >= minAge && student.age <= maxAge
+//   ).length;
+// }
+
+// function countStudentsWithEmailContainingC(students) {
+//   return students.filter(
+//     (student) =>
+//       student.email.toLowerCase().includes("c") &&
+//       !student.email.includes("com")
+//   ).length;
+// }
+// const students = [
+//   { name: "Ziko", surname: "Ashirov", age: 18, email: "ziko@gmail.com" },
+//   { name: "Cavid", surname: "Bashirov", age: 30, email: "cavid@gmail.com" },
+//   { name: "Baca", surname: "Aliyev", age: 25, email: "baca@gmail.com" },
+// ];
+// //console.log(countStudentsInAgeRange(students, 18, 25));
+// console.log(countStudentsWithEmailContainingC(students));
+function countStudentsWithEmailC(students) {
+  let count = 0;
+  students.forEach((student) => {
+    let email = student.email.split(".")[0];
+    if (email.toLowerCase().includes("c")) {
+      count++;
+    }
+  });
+  return count;
+}
+const students = [
+  { name: "Ziko", surname: "Ashirov", age: 18, email: "ziko@gmail.com" },
+  { name: "Cavid", surname: "Bashirov", age: 30, email: "cavid@gmail.com" },
+  { name: "Baca", surname: "Aliyev", age: 25, email: "baca@gmail.com" },
+];
+let result = countStudentsWithEmailC(students);
+console.log(result);
+
+//9) Function yazacaqsiz, Functiona parametr olaraq string gelecek.
+// Hemin function gelen parametrin ilk herfini boyuk herf edib geri qaytarsin.
+function captalizeFirstLetter(str) {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
+console.log(captalizeFirstLetter("salam"));
