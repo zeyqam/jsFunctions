@@ -316,8 +316,45 @@
 //console.log(element);
 //}
 //test(1, 2, 3, 4, 5);
+//console.log(this);
+// function showNumber() {
+//   console.log(this);
+// }
+// showNumber();
 
-let showText = () => {
-  console.log("tested");
-};
-showText();
+// const showText = () => {
+//   console.log(this);
+// };
+// showText("Nesir bey");
+// let student = {
+//   name: "reshad",
+//   surname: "Agayev",
+//   age: 21,
+//   address: "Neftciler",
+//   getFullName: function () {
+//     console.log(this.name + " " + this.surname);
+//   },
+//   getFullData: () => {
+//     console.log(this.name + " " + this.surname);
+//   },
+// };
+// student.getFullName();
+// student.getFullData();
+// const test = () => {
+//   for (let i = 0; i < arguments.length; i++) {
+//     const element = arguments[i];
+//     console.log(element);
+//   }
+// };
+// test(1, 2, 3);
+// function test() {
+//   for (let i = 0; i < arguments.length; i++) {
+//     const element = arguments[i];
+//     console.log(element);
+//   }
+// }
+// test(1, 2, 3);
+//this.alert();
+document.querySelector("button").addEventListener("click", function () {
+  this.style.background = "red";
+});
